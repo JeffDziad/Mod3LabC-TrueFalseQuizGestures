@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrueFalseQuizGestures.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout.GestureRecognizers>
+                <SwipeGestureRecognizer Swiped="SwipedRight" Direction="Right"/>
+                <SwipeGestureRecognizer Swiped="SwipedLeft" Direction="Left"/>
+            </StackLayout.GestureRecognizers>
+            <Frame BackgroundColor="#000" Padding="24" CornerRadius="0">
+                <Label Text="True/False Quiz" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <Label x:Name="QuestionHeader" Text="Question #" Margin="10" TextColor="Black"></Label>
+            <Label x:Name="QuestionText" Text="Loading..." Margin="10" FontSize="20" TextColor="Black" FontAttributes="Bold"></Label>
+            <Image x:Name="QuestionImage" Source="loading.jpg"></Image>
+            <BoxView Grid.Row="1" Margin="10" BackgroundColor="Black" HeightRequest="1"/>
+
+            <Grid Margin="10" x:Name="SwipeMarkers">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Text="&lt;&lt;&lt; False" FontSize="25" TextColor="Red" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
+                <Label Grid.Column="1" Text="True >>>" FontSize="25" TextColor="Green" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
